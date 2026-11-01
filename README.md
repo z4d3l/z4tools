@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="z4tools-logo-cropped.png" alt="z4tools logo" width="380">
+  <img src="fc1ca620053cb056a3442c598937844faba6c037c2225604e19c70a56e95a222.png" alt="z4tools logo" width="380">
 </p>
 
 # z4tools
