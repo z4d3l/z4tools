@@ -1,6 +1,6 @@
 # z4tools
 
-**an unofficial terminal toolkit for customizing and managing [gpubrewlauncher](https://github.com/NiftyNova/GPUBrewLauncher).**
+**a powerful unofficial terminal toolkit for customizing and managing [gpubrewlauncher](https://github.com/NiftyNova/GPUBrewLauncher).**
 
 z4tools is a menu-driven toolkit for launcher themes, app deployment, backups, maintenance, and development workflows. **v1.5.3 rc1** provides downloadable packages for android termux and debian/ubuntu.
 
