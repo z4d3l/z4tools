@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="z4tools.png" alt="z4tools logo" width="380">
-</p>
-
 # z4tools
 
 **a powerful unofficial terminal toolkit for customizing and managing [gpubrewlauncher](https://github.com/NiftyNova/GPUBrewLauncher).**
