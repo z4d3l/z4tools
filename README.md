@@ -1,4 +1,4 @@
-# z4tools v1.5.3
+# z4tools
 
 **an unofficial terminal toolkit for customizing and managing [gpubrewlauncher](https://github.com/NiftyNova/GPUBrewLauncher).**
 
