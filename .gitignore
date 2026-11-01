@@ -1,0 +1,26 @@
+# local settings and personal runtime data
+z4tools/settings.json
+z4tools/live-theme.json
+z4tools/last-restore.json
+z4tools/asset-colors.json
+z4tools/*.log
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.token
+*credentials*
+*secret*
+# generated files and local backups
+__pycache__/
+*.pyc
+*.bak
+*.before-*
+clean-menu-backup-*/
+z4tools/clean-menu-backup-*/
+*.zip
+*.tar
+*.tar.gz
+gpubrew-backups/
