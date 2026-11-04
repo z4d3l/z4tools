@@ -64,11 +64,17 @@ def patch():
     print('patched; backups:',backup)
     print('IMPORTANT: patch becomes active only after a fresh launcher startup.')
 def request():
-    import glob
-    dirs=sorted(glob.glob(str(pathlib.Path.home().parent/'usr/tmp/gpubrewlauncher-*')))
-    dirs=[pathlib.Path(x) for x in dirs if pathlib.Path(x).is_dir()]
-    if not dirs:
-        dirs=sorted(pathlib.Path('/data/data/com.termux/files/usr/tmp').glob('gpubrewlauncher-*'))
+    import os, tempfile
+    candidates = [pathlib.Path(tempfile.gettempdir())]
+    for key in ('TMPDIR', 'PREFIX'):
+        value = os.environ.get(key)
+        if value:
+            base = pathlib.Path(value)
+            candidates.append(base if key == 'TMPDIR' else base / 'tmp')
+    # Preserve the legacy Termux fallback without assuming it exists on Linux.
+    candidates.append(pathlib.Path('/data/data/com.termux/files/usr/tmp'))
+    dirs = sorted({p.resolve() for base in candidates if base.is_dir()
+                   for p in base.glob('gpubrewlauncher-*') if p.is_dir()})
     if not dirs: raise SystemExit('no runtime directories found')
     print('runtime directories:')
     for i,d in enumerate(dirs):print(i,d)

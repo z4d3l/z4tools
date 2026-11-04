@@ -5,7 +5,11 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 CONFIG = HERE / 'settings.json'
-DEFAULT_DEPLOYMENT = Path.home() / 'storage' / 'downloads' / 'app_deployment'
+# Termux uses Android shared storage; Linux defaults to a user-owned folder.
+import os
+IS_TERMUX = 'com.termux' in str(Path(__import__('sys').executable).resolve())
+DEFAULT_DEPLOYMENT = (Path.home() / 'storage' / 'downloads' / 'app_deployment'
+                      if IS_TERMUX else Path.home() / 'Downloads' / 'app_deployment')
 
 
 def get_deployment_dir():
